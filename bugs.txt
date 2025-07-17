@@ -1,0 +1,6 @@
+# 3.6/3.7
+def validate3():
+    if exclude:
+        for expr in rhs_expression.flatten():
+            if isinstance(expr, F) and expr.name in exclude:
+                return

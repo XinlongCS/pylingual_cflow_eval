@@ -22,7 +22,7 @@ done
 
 Summarize results
 ```bash
-python summary_script.py . 1 --output ./summary
+python summarize_results.py . 1 --output ./summary
 ```
 
 Compare summaries
