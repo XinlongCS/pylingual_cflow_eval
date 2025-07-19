@@ -35,9 +35,7 @@ done
 
 # Summarize results
 python summarize_results.py . ${new_num} --output ./summary
-```
 
-Compare summaries
-```
+# Compare summaries
 python compare_summary.py
 ```
