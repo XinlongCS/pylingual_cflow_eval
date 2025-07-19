@@ -39,5 +39,5 @@ python summarize_results.py . ${new_num} --output ./summary
 
 Compare summaries
 ```
-python compare_summary.py summary/1summary.txt summary/2summary.txt comparison_report.txt
+python compare_summary.py
 ```
