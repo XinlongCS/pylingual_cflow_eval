@@ -109,8 +109,9 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
     stats1 = parse_summary_file(file1)
     stats2 = parse_summary_file(file2)
     
-    prefix1 = os.path.basename(file1)[0]
-    prefix2 = os.path.basename(file2)[0]
+    # Extract the full number prefix from filenames (e.g., "9" from "9summary.txt")
+    prefix1 = os.path.basename(file1).split('summary')[0]
+    prefix2 = os.path.basename(file2).split('summary')[0]
     
     result_files1 = find_result_files(base_dir, prefix1)
     result_files2 = find_result_files(base_dir, prefix2)

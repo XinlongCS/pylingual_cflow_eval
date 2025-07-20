@@ -1,5 +1,7 @@
-Parse files
+Clean up then parse files
 ```bash
+rm -rf /tmp/cflow_test/3.*
+
 for version in 3.6 3.7 3.8 3.9 3.10 3.11 3.12 3.13; do
     echo "Running with Python $version..."
     python dev_scripts/cflow.py /syssec-nas1/pyc-research/evaluation_sets/rand_py_paths.txt -v "$version"
