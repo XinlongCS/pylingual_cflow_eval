@@ -131,8 +131,8 @@ def generate_summary(base_dir, number, output_dir="summary"):
     output_lines = [
         f"Summary for test number: {number}",
         "=" * 90,
-        "Version  | Total Files | Success (count/%) | Recon Fail (count/%) | Compile Error (count/%)",
-        "-" * 90
+        "Version | Total Files | Success (count/%)  | Recon Fail (count/%) | Compile Error (count/%)",
+        "--------|-------------|--------------------|----------------------|-----------------------",
     ]
     
     # Sort versions numerically
