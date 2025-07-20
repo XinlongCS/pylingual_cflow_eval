@@ -12,7 +12,7 @@ Version | Total  | Success (Δcnt/Δ%)   | Recon Fail (Δcnt/Δ%) | Compile Err 
 3.8     |    996 |   +2/  +0.2%        |   +3/  +0.3%         |   -5/  -0.5%           | IMPROVED
 3.9     |    996 |   +1/  +0.1%        |   +4/  +0.4%         |   -5/  -0.5%           | IMPROVED
 3.10    |    996 |   +3/  +0.3%        |   -2/  -0.2%         |   -1/  -0.1%           | IMPROVED
-3.11    |    996 |   +2/  +0.2%        |   -1/  -0.1%         |   -1/  -0.1%           | IMPROVED
+3.11    |    996 |   +3/  +0.3%        |   -1/  -0.1%         |   -2/  -0.2%           | IMPROVED
 3.12    |    996 |   +0/  +0.0%        |   -1/  -0.1%         |   +1/  +0.1%           | MIXED
 3.13    |    996 |   +1/  +0.1%        |   -2/  -0.2%         |   +1/  +0.1%           | IMPROVED
 
@@ -150,16 +150,15 @@ Still failing (140):
 Comparison for Python 3.11
 ----------------------------------------------------------------------------------------------------
 Old: ./3.11/7results3_11.txt (Success: 86.8%)
-New: ./3.11/8results3_11.txt (Success: 87.0%)
-Success Rate Change: +0.2%
+New: ./3.11/8results3_11.txt (Success: 87.1%)
+Success Rate Change: +0.3%
 
 Fixed files (3):
  - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/2317e8051506f42dc16627fc25ea436b18b39d80a10b1916ffd79480e040f12488e0b7014c770e2ddc1e87c040c5faea73e5716892047384c3dfed607dde3950/tf_upgrade_v2.py
  - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/7b3075ca5b1f8f03494faf4e5722253fd5d5d5b0da5b2ab8052316aefb44c29d009d8eac31760a77219235a8a98f78388303b76f6ed2320644ea7f6a0c18cdd7/Region.py
  - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/f1302ee6910d3196f9f94dec5a6b6e4e4fa8fd90cf593df950cebc4b45ec2468371e11e811c4c9584b70bac0fc6e76f627073b646a398c6822f5c86a29188ae8/to_7001.py
 
-Broken files (1):
- - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/5409792ebd1858fc060e47e74336c5898aced3a40a5a8f0b1197d0c4d183f19fbbc104374e997777eb733439bd2cf4916260d40d29b338221376f97210c0a927/makegraph.py
+Broken files (0):
 
 Still failing (128):
  - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
