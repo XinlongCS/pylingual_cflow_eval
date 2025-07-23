@@ -1,0 +1,228 @@
+                                COMPARATIVE ANALYSIS OF TEST RESULTS                                
+====================================================================================================
+Comparing 9summary.txt (old) vs 10summary.txt (new)
+====================================================================================================
+
+SUMMARY COMPARISON
+====================================================================================================
+Version | Total  | Success (Δcnt/Δ%)   | Recon Fail (Δcnt/Δ%) | Compile Err (Δcnt/Δ%)  | Trend
+----------------------------------------------------------------------------------------------------
+3.6     |    996 |   +0/  +0.0%        |   +0/  +0.0%         |   +0/  +0.0%           | MIXED
+3.7     |    996 |   +0/  +0.0%        |   +0/  +0.0%         |   +0/  +0.0%           | MIXED
+3.8     |    996 |   +0/  +0.0%        |   +0/  +0.0%         |   +0/  +0.0%           | MIXED
+3.9     |    996 |   +0/  +0.0%        |   +0/  +0.0%         |   +0/  +0.0%           | MIXED
+3.10    |    996 |   +0/  +0.0%        |   +0/  +0.0%         |   +0/  +0.0%           | MIXED
+3.11    |    996 |   +0/  +0.0%        |   +0/  +0.0%         |   +0/  +0.0%           | MIXED
+3.12    |    996 | +109/ +10.9%        |  -73/  -7.3%         |  -36/  -3.6%           | IMPROVED
+3.13    |    996 | +139/ +13.9%        | -103/ -10.3%         |  -36/  -3.6%           | IMPROVED
+
+====================================================================================================
+DETAILED VERSION COMPARISONS
+====================================================================================================
+
+Comparison for Python 3.6
+----------------------------------------------------------------------------------------------------
+Old: ./3.6/9results3_6.txt (Success: 77.1%)
+New: ./3.6/10results3_6.txt (Success: 77.1%)
+Success Rate Change: +0.0%
+
+Fixed files (0):
+
+Broken files (0):
+
+Still failing (228):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00200c5d1649ebc048c0af339566c73e7d3b54ebe88985db22cc08fd9285d4e8a5fc257d6b70b23d418a8670b67be5aa6cb0c07a368e59177980a6bb75cca22c/test_offsets.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/02e9ca407dc09b85a37a7303e9193bf7c4721d44ba5c5827d26c2390c6edfd6fbbc1956c01a8b0d53d8e187cb60af1707c64f8410534f803e3f5ff93b1e547e2/FogOverlay.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/074138e03b9b0449fb838fcb71b8e21cac23bd529660727d5b1bf1dbc21ee0cdc4142d118a64901bf90c3233c125cf39e86e99b5ccc27b5c8b3abcd8b7adde2c/GuiSlider.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/07fe390b504bb4106ea6ff7f83b1d9ad735524a175f2c6184def16bb5e0867ab14b4bdb48ec2059af1fb8dd2facbf5f458c8689cc10ab3409b40dd63a81618c6/program_utils.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+... and 218 more
+
+Comparison for Python 3.7
+----------------------------------------------------------------------------------------------------
+Old: ./3.7/9results3_7.txt (Success: 81.2%)
+New: ./3.7/10results3_7.txt (Success: 81.2%)
+Success Rate Change: +0.0%
+
+Fixed files (0):
+
+Broken files (0):
+
+Still failing (187):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/02e9ca407dc09b85a37a7303e9193bf7c4721d44ba5c5827d26c2390c6edfd6fbbc1956c01a8b0d53d8e187cb60af1707c64f8410534f803e3f5ff93b1e547e2/FogOverlay.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/074138e03b9b0449fb838fcb71b8e21cac23bd529660727d5b1bf1dbc21ee0cdc4142d118a64901bf90c3233c125cf39e86e99b5ccc27b5c8b3abcd8b7adde2c/GuiSlider.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/07fe390b504bb4106ea6ff7f83b1d9ad735524a175f2c6184def16bb5e0867ab14b4bdb48ec2059af1fb8dd2facbf5f458c8689cc10ab3409b40dd63a81618c6/program_utils.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+... and 177 more
+
+Comparison for Python 3.8
+----------------------------------------------------------------------------------------------------
+Old: ./3.8/9results3_8.txt (Success: 84.8%)
+New: ./3.8/10results3_8.txt (Success: 84.8%)
+Success Rate Change: +0.0%
+
+Fixed files (0):
+
+Broken files (0):
+
+Still failing (151):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04799fec1c25a55d1149cccf931a021b4e37a3c73803645c65d1fcda7d6707f5305e55d64e540de7884245329aae6d06cc3e5e5d2e3d76498b6243c12f6ef41c/http_server_services.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/05e71b57ae2024128f44ed40ce838e78dc477b2d0f4e146b5778d120e7a4c29b5894a45074cb9cc7068f021a71a801ad4d66921f845af4ce5741bc869c38735d/nonlinear.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0d16d1704078887762a5412403c3d55a81e048df9e983a1aaeb1907f3d0c4d85167cb6afdd99aae431af0e5938ba1750bece062e0fe5bdbc2974a18337bd8030/ctms_all_menu.py
+... and 141 more
+
+Comparison for Python 3.9
+----------------------------------------------------------------------------------------------------
+Old: ./3.9/9results3_9.txt (Success: 85.0%)
+New: ./3.9/10results3_9.txt (Success: 85.0%)
+Success Rate Change: +0.0%
+
+Fixed files (0):
+
+Broken files (0):
+
+Still failing (149):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00200c5d1649ebc048c0af339566c73e7d3b54ebe88985db22cc08fd9285d4e8a5fc257d6b70b23d418a8670b67be5aa6cb0c07a368e59177980a6bb75cca22c/test_offsets.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04799fec1c25a55d1149cccf931a021b4e37a3c73803645c65d1fcda7d6707f5305e55d64e540de7884245329aae6d06cc3e5e5d2e3d76498b6243c12f6ef41c/http_server_services.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/05e71b57ae2024128f44ed40ce838e78dc477b2d0f4e146b5778d120e7a4c29b5894a45074cb9cc7068f021a71a801ad4d66921f845af4ce5741bc869c38735d/nonlinear.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+... and 139 more
+
+Comparison for Python 3.10
+----------------------------------------------------------------------------------------------------
+Old: ./3.10/9results3_10.txt (Success: 86.0%)
+New: ./3.10/10results3_10.txt (Success: 86.0%)
+Success Rate Change: +0.0%
+
+Fixed files (0):
+
+Broken files (0):
+
+Still failing (139):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00200c5d1649ebc048c0af339566c73e7d3b54ebe88985db22cc08fd9285d4e8a5fc257d6b70b23d418a8670b67be5aa6cb0c07a368e59177980a6bb75cca22c/test_offsets.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04799fec1c25a55d1149cccf931a021b4e37a3c73803645c65d1fcda7d6707f5305e55d64e540de7884245329aae6d06cc3e5e5d2e3d76498b6243c12f6ef41c/http_server_services.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/05e71b57ae2024128f44ed40ce838e78dc477b2d0f4e146b5778d120e7a4c29b5894a45074cb9cc7068f021a71a801ad4d66921f845af4ce5741bc869c38735d/nonlinear.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+... and 129 more
+
+Comparison for Python 3.11
+----------------------------------------------------------------------------------------------------
+Old: ./3.11/9results3_11.txt (Success: 86.3%)
+New: ./3.11/10results3_11.txt (Success: 86.3%)
+Success Rate Change: +0.0%
+
+Fixed files (0):
+
+Broken files (0):
+
+Still failing (136):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04799fec1c25a55d1149cccf931a021b4e37a3c73803645c65d1fcda7d6707f5305e55d64e540de7884245329aae6d06cc3e5e5d2e3d76498b6243c12f6ef41c/http_server_services.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/05e71b57ae2024128f44ed40ce838e78dc477b2d0f4e146b5778d120e7a4c29b5894a45074cb9cc7068f021a71a801ad4d66921f845af4ce5741bc869c38735d/nonlinear.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0d16d1704078887762a5412403c3d55a81e048df9e983a1aaeb1907f3d0c4d85167cb6afdd99aae431af0e5938ba1750bece062e0fe5bdbc2974a18337bd8030/ctms_all_menu.py
+... and 126 more
+
+Comparison for Python 3.12
+----------------------------------------------------------------------------------------------------
+Old: ./3.12/9results3_12.txt (Success: 74.5%)
+New: ./3.12/10results3_12.txt (Success: 85.4%)
+Success Rate Change: +10.9%
+
+Fixed files (109):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0132b595b206cb12f7d8d7ef2382ff2e54787600e7350f71769c33af1705c3e206f3aaa7469dc2132262a64e5be96c125abb913cb59007867b618ae3ceb91959/labels.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03132c8737b2947598a25e25c3f5f5b461fa334b6d5e04c438b2e83d7857a2310692a525a6c6aa43c3a27c9ea75f339f184cdaeadb702ccb0a25c0f10cf287bd/lib_control_with_docker.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04684c21bebb7bc851e4d7318020b7fc6741676193d622f8c9bce8569727b0fd7e568fdf4a9c130bdc613ada3e61e1b84d6654130e3da7fbee63643f6ed35734/fields.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/062d944976f42a100be8b333183c92f8eec616c13f119ca7a66732fa9de8fbe9cf32b4849a9d23b11435732fc080f0d3ab5a7db8d9e840382cc32cf1bc9676fc/test_losses.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/07fe390b504bb4106ea6ff7f83b1d9ad735524a175f2c6184def16bb5e0867ab14b4bdb48ec2059af1fb8dd2facbf5f458c8689cc10ab3409b40dd63a81618c6/program_utils.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0be6827b80bf07d4af475f59be7f3fdb6c38e8a040e04d47418b172c93e2124b5c226467d8541bc70a2fd838970b43ff56651bcee2780421bc6881cc27050a69/CFFA.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0ee8c42695402fca6a78f96b0c28c4e1583d7ca30ce7ca10dee62142796fb10596f06e52451fbd04496b940225cd5c36b0e8a7ff1ebc8c8d9b38ecbd8516b64d/models.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/10d65b8d5e80ed166529a2dc49a1ce257a69f8a40aa5eb0eda2f07277bb39ac7028a564fff4b190986280f95d1c82cd241f9ec58ede1cd05a45b68a331202f4c/io_argoproj_events_v1alpha1_event_source_status.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/11598b3a0a684e68df82cde66a1ca928aac72fdadec7040d7fc1928c597fee9a6e3db753dcb5089ace02a671c8e88bd2e47bd0d56a3b65b5f60e0af3add09bbf/test_tracers.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/13a8bab113f8f601413d7192d1b93be8fa0cd4faa4165283fce20243dd9e3ca374767626f652a932bff091916840f8a0391655ffd5915c4d713688f9a30a4c95/cim_circuit.py
+... and 99 more
+
+Broken files (0):
+
+Still failing (145):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04799fec1c25a55d1149cccf931a021b4e37a3c73803645c65d1fcda7d6707f5305e55d64e540de7884245329aae6d06cc3e5e5d2e3d76498b6243c12f6ef41c/http_server_services.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/05e71b57ae2024128f44ed40ce838e78dc477b2d0f4e146b5778d120e7a4c29b5894a45074cb9cc7068f021a71a801ad4d66921f845af4ce5741bc869c38735d/nonlinear.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0d16d1704078887762a5412403c3d55a81e048df9e983a1aaeb1907f3d0c4d85167cb6afdd99aae431af0e5938ba1750bece062e0fe5bdbc2974a18337bd8030/ctms_all_menu.py
+... and 135 more
+
+Comparison for Python 3.13
+----------------------------------------------------------------------------------------------------
+Old: ./3.13/9results3_13.txt (Success: 72.1%)
+New: ./3.13/10results3_13.txt (Success: 86.0%)
+Success Rate Change: +13.9%
+
+Fixed files (140):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0132b595b206cb12f7d8d7ef2382ff2e54787600e7350f71769c33af1705c3e206f3aaa7469dc2132262a64e5be96c125abb913cb59007867b618ae3ceb91959/labels.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/019f82b249f53f1eb80b80e7b2e6cbbd6c6558a0fcbdf7e0af90371d1491337089f5732a8f72f273b674686b54ac6d01fdbdcfb1e8a0ba692df8f83ff4d37d4c/nx.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03132c8737b2947598a25e25c3f5f5b461fa334b6d5e04c438b2e83d7857a2310692a525a6c6aa43c3a27c9ea75f339f184cdaeadb702ccb0a25c0f10cf287bd/lib_control_with_docker.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04684c21bebb7bc851e4d7318020b7fc6741676193d622f8c9bce8569727b0fd7e568fdf4a9c130bdc613ada3e61e1b84d6654130e3da7fbee63643f6ed35734/fields.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/062d944976f42a100be8b333183c92f8eec616c13f119ca7a66732fa9de8fbe9cf32b4849a9d23b11435732fc080f0d3ab5a7db8d9e840382cc32cf1bc9676fc/test_losses.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/07fe390b504bb4106ea6ff7f83b1d9ad735524a175f2c6184def16bb5e0867ab14b4bdb48ec2059af1fb8dd2facbf5f458c8689cc10ab3409b40dd63a81618c6/program_utils.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0be6827b80bf07d4af475f59be7f3fdb6c38e8a040e04d47418b172c93e2124b5c226467d8541bc70a2fd838970b43ff56651bcee2780421bc6881cc27050a69/CFFA.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0c9f39350d08eb285f54f040cafba4b46918b7f36a5f8f6425294e127f9399e0fc48f34c7f8300d41daed97e3c7caae61de6f99639c496177ca4559657da3913/arraysetops.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0ee8c42695402fca6a78f96b0c28c4e1583d7ca30ce7ca10dee62142796fb10596f06e52451fbd04496b940225cd5c36b0e8a7ff1ebc8c8d9b38ecbd8516b64d/models.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/10d65b8d5e80ed166529a2dc49a1ce257a69f8a40aa5eb0eda2f07277bb39ac7028a564fff4b190986280f95d1c82cd241f9ec58ede1cd05a45b68a331202f4c/io_argoproj_events_v1alpha1_event_source_status.py
+... and 130 more
+
+Broken files (1):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/f1302ee6910d3196f9f94dec5a6b6e4e4fa8fd90cf593df950cebc4b45ec2468371e11e811c4c9584b70bac0fc6e76f627073b646a398c6822f5c86a29188ae8/to_7001.py
+
+Still failing (138):
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/00b452b8c1006f44185dd6b2372b989760dde332cd39a6311476234dd4c85ca9c82dbf744ee72bd8df596f2c943cbc24a856d9fda39dc41a5976fcfa4de946b4/global_fitter.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03dcf4983f738701206929b42830d2788d79662a20bafd7b525049f70b3b03ec9dc0176e812f45bc237a613e94e3d64a2d4a52e9a1f5d838eb389aefdaa0a344/cache.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/03ebbcc151e75e2b5282a3dedfd31ab22cc0b53e0f6282f0fb313be48e7b00e65792c9bc480d3a24bde607126be4c823108f03172b630f4f20fc1587fd2eaa74/moe.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0457e548b2a7c51bd59599c24868abbb0e7a8e0a02374c0139cd6cbb5aef9a4ea9431311da47b767f531337d5ffa9a1f050b1844c67d2175ef06a285e9bdfa8a/csv.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/04799fec1c25a55d1149cccf931a021b4e37a3c73803645c65d1fcda7d6707f5305e55d64e540de7884245329aae6d06cc3e5e5d2e3d76498b6243c12f6ef41c/http_server_services.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/05e71b57ae2024128f44ed40ce838e78dc477b2d0f4e146b5778d120e7a4c29b5894a45074cb9cc7068f021a71a801ad4d66921f845af4ce5741bc869c38735d/nonlinear.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0792ff9ebe5e8df88476560c2d2fccc2bf4d7bb147a6df88305bbd5708bbe728c1a349ac6ebe22063abd4889c2587e04c0634c8e7a6eba6359be1f2f5a39ac3d/fastmysql.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/084b31c370d7f0e755041142311efee424ba1d524d84ef437e4cff9a087191bf30974c8bc19ac84444ccc13b49023bf5691c419a568391afef5e5bba9cf4f526/_base.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/089f412db18b2330be57aa7c94da83e0c03ae9f6e06f13905349c767c3d1a8d6fb4e42af345570f7db04fa1a01b47506f9126dda6a1f7b5214d72384f74759f5/messaging.py
+ - /syssec-nas1/pyc-research/evaluation_sets/rand_pys/0d16d1704078887762a5412403c3d55a81e048df9e983a1aaeb1907f3d0c4d85167cb6afdd99aae431af0e5938ba1750bece062e0fe5bdbc2974a18337bd8030/ctms_all_menu.py
+... and 128 more
