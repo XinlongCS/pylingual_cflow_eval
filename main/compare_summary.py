@@ -150,9 +150,9 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
         ccnt = s2['compile_count'] - s1['compile_count']
         cpct = s2['compile_pct'] - s1['compile_pct']
         
-        success_val = f"{s2['success_count']} {scnt:>+4}/{spct:>+6.1f}%"
-        recon_val = f"{s2['recon_count']} {rcnt:>+4}/{rpct:>+6.1f}%"
-        compile_val = f"{s2['compile_count']} {ccnt:>+4}/{cpct:>+6.1f}%"
+        success_val = f"{s2['success_count']} ({scnt:>+1}/{spct:>+1.1f}%)"
+        recon_val = f"{s2['recon_count']} ({rcnt:>+1}/{rpct:>+1.1f}%)"
+        compile_val = f"{s2['compile_count']} ({ccnt:>+1}/{cpct:>+1.1f}%)"
         trend = "IMPROVED" if scnt > 0 else "WORSENED" if scnt < 0 else "MIXED"
         
         report.append(f"{ver:7} | {s1['total']:6} | {success_val:19} | {recon_val:20} | {compile_val:22} | {trend}")
