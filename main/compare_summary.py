@@ -134,7 +134,7 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
     report.append("\nSUMMARY COMPARISON")
     report.append("=" * 100)
     report.append("Version | Total  | Success (Δcnt/Δ%)   | Recon Fail (Δcnt/Δ%) | Compile Err (Δcnt/Δ%)  | Trend")
-    report.append("-" * 100)
+    report.append("--------|--------|---------------------|----------------------|------------------------|------------")
     
     for ver in versions:
         if ver not in stats1 or ver not in stats2:
