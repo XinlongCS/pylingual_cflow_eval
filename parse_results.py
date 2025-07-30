@@ -9,13 +9,15 @@ def parse_and_format_results(json_path):
     # Get all failed files
     compile_errors = data.get('compile_error', [])
     failures = data.get('failure', [])
-    all_failures = compile_errors + failures
+    errors = data.get('error', [])  # New: Capture runtime errors
+    all_failures = compile_errors + failures + errors  # Include errors in total failures
     
     # Count totals
     total_files = sum(len(v) for v in data.values() if isinstance(v, list))
     total_success = len(data.get('success', []))
     total_failures = len(failures)
     total_compile_errors = len(compile_errors)
+    total_errors = len(errors)  # New: Count runtime errors
     
     # Format the output
     output = []
@@ -24,6 +26,7 @@ def parse_and_format_results(json_path):
     output.append(f"Total failures: {len(all_failures)} ({len(all_failures)/total_files:.1%})")
     output.append(f"  - Reconstruction failures: {total_failures}")
     output.append(f"  - Compile errors: {total_compile_errors}")
+    output.append(f"  - Runtime errors: {total_errors}")  # New: Show runtime errors count
     
     # Combined sorted failures section
     if all_failures:
@@ -35,11 +38,28 @@ def parse_and_format_results(json_path):
         )
         for i, filepath in enumerate(sorted_failures, 1):
             filename = Path(filepath).name
-            failure_type = "COMPILE ERROR" if filepath in compile_errors else "RECONSTRUCTION FAILURE"
+            # Determine failure type
+            if filepath in compile_errors:
+                failure_type = "COMPILE ERROR"
+            elif filepath in errors:
+                failure_type = "RUNTIME ERROR"
+            else:
+                failure_type = "RECONSTRUCTION FAILURE"
             output.append(f"{i}. {filename} [{failure_type}] (path: {filepath})")
     
     # Detailed sections for each failure type
     output.append("\n=== Detailed Breakdown ===")
+    
+    # Runtime errors section (new)
+    if errors:
+        output.append("\nRuntime Errors:")
+        sorted_errors = sorted(
+            errors,
+            key=lambda x: Path(x).name
+        )
+        for i, filepath in enumerate(sorted_errors, 1):
+            filename = Path(filepath).name
+            output.append(f"{i}. {filename} (path: {filepath})")
     
     # Compile errors section
     if compile_errors:

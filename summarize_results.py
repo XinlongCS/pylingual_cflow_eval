@@ -8,7 +8,8 @@ def parse_result_file(file_path):
         'total': 0,
         'success': {'count': 0, 'pct': 0.0},
         'recon_fail': {'count': 0, 'pct': 0.0},
-        'compile_error': {'count': 0, 'pct': 0.0}
+        'compile_error': {'count': 0, 'pct': 0.0},
+        'runtime_error': {'count': 0, 'pct': 0.0}
     }
     
     try:
@@ -50,16 +51,28 @@ def parse_result_file(file_path):
                 else:
                     stats['compile_error']['pct'] = (stats['compile_error']['count'] / stats['total']) * 100
             
+            # New: Extract runtime errors
+            runtime_match = re.search(r'Runtime errors:\s*(\d+)\s*(?:\(([\d.]+)%\))?', content)
+            if runtime_match:
+                stats['runtime_error']['count'] = int(runtime_match.group(1))
+                if runtime_match.group(2):  # Percentage might be missing
+                    stats['runtime_error']['pct'] = float(runtime_match.group(2))
+                else:
+                    stats['runtime_error']['pct'] = (stats['runtime_error']['count'] / stats['total']) * 100
+            
             # Verify counts add up correctly
             if stats['total'] > 0:
                 calculated_total = (stats['success']['count'] + 
                                   stats['recon_fail']['count'] + 
-                                  stats['compile_error']['count'])
+                                  stats['compile_error']['count'] +
+                                  stats['runtime_error']['count'])  # Added runtime errors
                 
-                if total_failures > 0 and (stats['recon_fail']['count'] + stats['compile_error']['count']) != total_failures:
+                if total_failures > 0 and (stats['recon_fail']['count'] + 
+                                         stats['compile_error']['count'] +
+                                         stats['runtime_error']['count']) != total_failures:
                     print(f"Warning: Failure count mismatch in {file_path}")
                     print(f"  Total failures: {total_failures}")
-                    print(f"  Recon + Compile: {stats['recon_fail']['count'] + stats['compile_error']['count']}")
+                    print(f"  Recon + Compile + Runtime: {stats['recon_fail']['count'] + stats['compile_error']['count'] + stats['runtime_error']['count']}")
                 
                 if calculated_total != stats['total']:
                     print(f"Warning: Total count mismatch in {file_path}")
@@ -97,7 +110,8 @@ def generate_summary(base_dir, number, output_dir="summary"):
                 'total': 0,
                 'success': {'count': 0, 'pct': 0.0},
                 'recon_fail': {'count': 0, 'pct': 0.0},
-                'compile_error': {'count': 0, 'pct': 0.0}
+                'compile_error': {'count': 0, 'pct': 0.0},
+                'runtime_error': {'count': 0, 'pct': 0.0}
             }
             continue
         
@@ -124,15 +138,16 @@ def generate_summary(base_dir, number, output_dir="summary"):
                 'total': 0,
                 'success': {'count': 0, 'pct': 0.0},
                 'recon_fail': {'count': 0, 'pct': 0.0},
-                'compile_error': {'count': 0, 'pct': 0.0}
+                'compile_error': {'count': 0, 'pct': 0.0},
+                'runtime_error': {'count': 0, 'pct': 0.0}
             }
     
     # Generate summary output
     output_lines = [
         f"Summary for test number: {number}",
-        "=" * 90,
-        "Version | Total Files | Success (count/%)  | Recon Fail (count/%) | Compile Error (count/%)",
-        "--------|-------------|--------------------|----------------------|-----------------------",
+        "=" * 120,
+        "Version | Total Files | Success (count/%)  | Recon Fail (count/%)  | Compile Error (count/%) | Runtime Error (count/%)",
+        "--------|-------------|--------------------|-----------------------|-------------------------|------------------------",
     ]
     
     # Sort versions numerically
@@ -141,16 +156,17 @@ def generate_summary(base_dir, number, output_dir="summary"):
         
         if stats['total'] == 0:
             output_lines.append(
-                f"{ver:7} | {'No data':11} | {'N/A':18} | {'N/A':20} | {'N/A':20}"
+                f"{ver:7} | {'No data':11} | {'N/A':18} | {'N/A':21} | {'N/A':22} | {'N/A':21}"
             )
             continue
             
         success_str = f"{stats['success']['count']} ({stats['success']['pct']:.1f}%)"
         recon_str = f"{stats['recon_fail']['count']} ({stats['recon_fail']['pct']:.1f}%)"
         compile_str = f"{stats['compile_error']['count']} ({stats['compile_error']['pct']:.1f}%)"
+        runtime_str = f"{stats['runtime_error']['count']} ({stats['runtime_error']['pct']:.1f}%)"
         
         output_lines.append(
-            f"{ver:7} | {stats['total']:11} | {success_str:18} | {recon_str:20} | {compile_str:20}"
+            f"{ver:7} | {stats['total']:11} | {success_str:18} | {recon_str:21} | {compile_str:23} | {runtime_str:21}"
         )
     
     # Write to output file

@@ -41,13 +41,13 @@ for version in 3.6 3.7 3.8 3.9 3.10 3.11 3.12 3.13; do
     
     echo "Running with Python $version..."
     echo "Output will be saved to ${version}/${new_num}results${version_underscore}.txt"
-    python parse_results.py "/tmp/cflow_test/${version}/rand_py_paths_0/results.json" > "${version}/${new_num}results${version_underscore}.txt"
+    python ~/pylingual_eval/parse_results.py "/tmp/cflow_test/${version}/rand_py_paths_0/results.json" > "${version}/${new_num}results${version_underscore}.txt"
     echo "----------------------------------"
 done
 
 # Summarize results
-python summarize_results.py . ${new_num} --output ./summary
+python ~/pylingual_eval/summarize_results.py . ${new_num} --output ./summary
 
 # Compare summaries
-python compare_summary.py
+python ~/pylingual_eval/compare_summary.py
 ```

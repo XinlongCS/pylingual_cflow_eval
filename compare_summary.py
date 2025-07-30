@@ -32,7 +32,7 @@ def parse_summary_file(file_path):
             content = f.read()
     
     version_entries = re.findall(
-        r'(\d+\.\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\(([\d.]+)%\)\s*\|\s*(\d+)\s*\(([\d.]+)%\)\s*\|\s*(\d+)\s*\(([\d.]+)%\)',
+        r'(\d+\.\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\(([\d.]+)%\)\s*\|\s*(\d+)\s*\(([\d.]+)%\)\s*\|\s*(\d+)\s*\(([\d.]+)%\)\s*\|\s*(\d+)\s*\(([\d.]+)%\)',
         content
     )
     
@@ -45,14 +45,16 @@ def parse_summary_file(file_path):
             'recon_count': int(entry[4]),
             'recon_pct': float(entry[5]),
             'compile_count': int(entry[6]),
-            'compile_pct': float(entry[7])
+            'compile_pct': float(entry[7]),
+            'runtime_count': int(entry[8]),
+            'runtime_pct': float(entry[9])
         }
     
     return version_stats
 
 def parse_result_file(file_path):
     """Parse individual result file to get detailed failure information"""
-    failures = {'recon': [], 'compile': []}
+    failures = {'recon': [], 'compile': [], 'runtime': []}
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -78,6 +80,17 @@ def parse_result_file(file_path):
     )
     for match in compile_matches:
         failures['compile'].append({
+            'filename': match.group(1),
+            'path': match.group(2)
+        })
+
+    runtime_matches = re.finditer(
+        r'^\d+\.\s+(.+?)\s+\[RUNTIME ERROR\]\s*\(path:\s*(.+?)\)',
+        content,
+        re.MULTILINE
+    )
+    for match in runtime_matches:
+        failures['runtime'].append({
             'filename': match.group(1),
             'path': match.group(2)
         })
@@ -125,16 +138,16 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
     output_file = os.path.join(output_dir, f"{prefix1}comparison_report.txt")
     
     report = []
-    report.append("COMPARATIVE ANALYSIS OF TEST RESULTS".center(100))
-    report.append("=" * 100)
+    report.append("COMPARATIVE ANALYSIS OF TEST RESULTS".center(120))
+    report.append("=" * 120)
     report.append(f"Comparing {os.path.basename(file1)} (old) vs {os.path.basename(file2)} (new)")
-    report.append("=" * 100)
+    report.append("=" * 120)
     
-    # Summary comparison
+    # Summary comparison with improved formatting
     report.append("\nSUMMARY COMPARISON")
-    report.append("=" * 100)
-    report.append("Version | Total  | Success (Δcnt/Δ%)   | Recon Fail (Δcnt/Δ%) | Compile Err (Δcnt/Δ%)  | Trend")
-    report.append("-" * 100)
+    report.append("=" * 120)
+    report.append("Version | Total  | Success (Δcnt/Δ%)   | Recon Fail (Δcnt/Δ%) | Compile Err (Δcnt/Δ%) | Runtime Err (Δcnt/Δ%) | Trend    ")
+    report.append("--------|--------|---------------------|----------------------|-----------------------|-----------------------|---------")
     
     for ver in versions:
         if ver not in stats1 or ver not in stats2:
@@ -149,18 +162,23 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
         rpct = s2['recon_pct'] - s1['recon_pct']
         ccnt = s2['compile_count'] - s1['compile_count']
         cpct = s2['compile_pct'] - s1['compile_pct']
+        rtcnt = s2['runtime_count'] - s1['runtime_count']
+        rtpct = s2['runtime_pct'] - s1['runtime_pct']
         
         success_val = f"{scnt:>+4}/{spct:>+6.1f}%"
         recon_val = f"{rcnt:>+4}/{rpct:>+6.1f}%"
         compile_val = f"{ccnt:>+4}/{cpct:>+6.1f}%"
+        runtime_val = f"{rtcnt:>+4}/{rtpct:>+6.1f}%"
+        
         trend = "IMPROVED" if scnt > 0 else "WORSENED" if scnt < 0 else "MIXED"
         
-        report.append(f"{ver:7} | {s1['total']:6} | {success_val:19} | {recon_val:20} | {compile_val:22} | {trend}")
+        report.append("{:7} | {:6} | {:19} | {:20} | {:21} | {:21} | {:12}".format(
+            ver, s1['total'], success_val, recon_val, compile_val, runtime_val, trend))
     
-    # Detailed comparisons
-    report.append("\n" + "=" * 100)
+    # Detailed comparisons with improved formatting
+    report.append("\n" + "=" * 120)
     report.append("DETAILED VERSION COMPARISONS")
-    report.append("=" * 100)
+    report.append("=" * 120)
     
     for ver in versions:
         if ver not in result_files1 or ver not in result_files2:
@@ -169,21 +187,36 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
         failures1 = parse_result_file(result_files1[ver])
         failures2 = parse_result_file(result_files2[ver])
         
-        old_failures = {f['path'] for f in failures1['recon'] + failures1['compile']}
-        new_failures = {f['path'] for f in failures2['recon'] + failures2['compile']}
+        old_failures = {
+            'recon': {f['path'] for f in failures1['recon']},
+            'compile': {f['path'] for f in failures1['compile']},
+            'runtime': {f['path'] for f in failures1['runtime']}
+        }
         
-        fixed_files = old_failures - new_failures
-        broken_files = new_failures - old_failures
-        same_failures = old_failures & new_failures
+        new_failures = {
+            'recon': {f['path'] for f in failures2['recon']},
+            'compile': {f['path'] for f in failures2['compile']},
+            'runtime': {f['path'] for f in failures2['runtime']}
+        }
+        
+        # Calculate fixed and broken files
+        fixed_files = (old_failures['recon'] | old_failures['compile'] | old_failures['runtime']) - \
+                     (new_failures['recon'] | new_failures['compile'] | new_failures['runtime'])
+        
+        broken_files = (new_failures['recon'] | new_failures['compile'] | new_failures['runtime']) - \
+                      (old_failures['recon'] | old_failures['compile'] | old_failures['runtime'])
+        
+        same_failures = (old_failures['recon'] | old_failures['compile'] | old_failures['runtime']) & \
+                       (new_failures['recon'] | new_failures['compile'] | new_failures['runtime'])
         
         old_success = stats1[ver]['success_pct'] if ver in stats1 else 0
         new_success = stats2[ver]['success_pct'] if ver in stats2 else 0
         success_delta = new_success - old_success
         
         report.append(f"\nComparison for Python {ver}")
-        report.append("-" * 100)
-        report.append(f"Old: {result_files1[ver]} (Success: {old_success:.1f}%)")
-        report.append(f"New: {result_files2[ver]} (Success: {new_success:.1f}%)")
+        report.append("-" * 120)
+        report.append(f"Old: {os.path.basename(result_files1[ver])} (Success: {old_success:.1f}%)")
+        report.append(f"New: {os.path.basename(result_files2[ver])} (Success: {new_success:.1f}%)")
         report.append(f"Success Rate Change: {success_delta:+.1f}%")
         
         report.append(f"\nFixed files ({len(fixed_files)}):")
