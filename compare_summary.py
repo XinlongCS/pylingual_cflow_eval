@@ -165,10 +165,10 @@ def generate_comparison_report(file1, file2, base_dir, output_dir):
         rtcnt = s2['runtime_count'] - s1['runtime_count']
         rtpct = s2['runtime_pct'] - s1['runtime_pct']
         
-        success_val = f"{scnt:>+4}/{spct:>+6.1f}%"
-        recon_val = f"{rcnt:>+4}/{rpct:>+6.1f}%"
-        compile_val = f"{ccnt:>+4}/{cpct:>+6.1f}%"
-        runtime_val = f"{rtcnt:>+4}/{rtpct:>+6.1f}%"
+        success_val = f"{s2['success_count']:>4} {scnt:>+4} / {spct:>+5.1f}%"
+        recon_val = f"{s2['recon_count']:>4} {rcnt:>+4} / {rcnt:>+5.1f}%"
+        compile_val = f"{s2['compile_count']:>4} {ccnt:>+4} / {ccnt:>+5.1f}%"
+        runtime_val = f"{s2['runtime_count']:>4} {rtcnt:>+4} / {rtcnt:>+5.1f}%"
         
         trend = "IMPROVED" if scnt > 0 else "WORSENED" if scnt < 0 else "MIXED"
         
