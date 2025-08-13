@@ -19,7 +19,7 @@ for version in 3.6 3.7 3.8 3.9 3.10 3.11 3.12 3.13; do
     
     echo "Running with Python $version..."
     echo "Output will be saved to ${version}/${new_num}results${version_underscore}.txt"
-    python ~/pylingual_eval/parse_results.py "/tmp/cflow_test/${version}/random1_py_paths${verson_underscore}_files_0/results.json" > "${version}/${new_num}results${version_underscore}.txt"
+    python ~/pylingual_eval/parse_results.py "/tmp/cflow_test/${version}/random1_py_paths${version_underscore}_files_0/results.json" > "${version}/${new_num}results${version_underscore}.txt"
     echo "----------------------------------"
 done
 
